@@ -12,8 +12,8 @@ body {
   --secondary-text-color: #5c5c62;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
-  --border-color: #ff9a0045;
-  --text-decoration-color: #ff9a00;
+  --border-color: #009ccf;
+  --text-decoration-color: #009ccf;
 }
 
 .container {
@@ -121,11 +121,9 @@ body {
 }
 
 .contact-info__avatar {
-  border-radius: 50%;
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border: 3px solid;
   border-color: var(--text-decoration-color);
 }
 .intro {
@@ -152,6 +150,10 @@ body {
 .intro_text {
   color: var(--secondary-text-color);
   text-align: justify;
+}
+.skills__container {
+  display: flex;
+  justify-content: space-around;
 }
 
 .skills__header {
@@ -256,4 +258,102 @@ body {
 
 .additional-info__languages-item {
   color: var(--secondary-text-color);
+}
+
+.portfolio {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.portfolio__title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.portfolio__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.portfolio__item {
+  position: relative;
+  flex: 1 1 calc(50% - 20px);
+  overflow: hidden;
+}
+
+.portfolio__image-wrapper {
+  overflow: hidden;
+}
+
+.portfolio__image {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.portfolio__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio__description-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.portfolio__project-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.portfolio__description {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.portfolio__links {
+  display: flex;
+  gap: 10px;
+}
+
+.portfolio__link {
+  background-color: #393939;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.portfolio__link:hover {
+  background-color: #000;
+}
+
+.portfolio__item:hover .portfolio__image {
+  transform: scale(1.1);
+  filter: brightness(100%);
+}
+
+.portfolio__item:hover .portfolio__overlay {
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .portfolio__item {
+    flex: 1 1 100%;
+  }
 }
